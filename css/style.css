@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --cell-size: 100px;
+    --grid-x: 5;
+    --grid-y: 4;
+    --bg-color: #0E1026;
+    --border-color: #6D6D6B;
+    --h1-bg: linear-gradient(90deg, rgba(44, 49, 68, 1) 0%, rgb(23, 26, 54) 100%);
+    --h1-color: #B70324;
+    --divisor: #777A8B;
+    --content-bg: linear-gradient(356deg, rgb(0, 0, 0) 0%, rgba(11, 46, 76, 1) 100%);
+    --h2-color: #2E8BB4;
+    --text-color: #4B6885;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: black;
+    text-transform: uppercase;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+h1 {
+    padding: 5px;
+    background: var(--h1-bg);
+    color: var(--h1-color);
+    font-size: 1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+h1>span:nth-child(2) {
+    color: white;
+}
+
+h1 .dot {
+    padding: 0 10px 0 5px;
+}
+
+h2 {
+    letter-spacing: 1px;
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--h2-color);
+    padding-bottom: 1rem;
+}
+
+h2 .dot {
+    padding: 0 10px 0 5px;
+    color: var(--h2-color);
+}
+
+h3 {
+    letter-spacing: 1px;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--h2-color);
+    text-align: center;
+    padding: .5rem;
+    white-space: nowrap;
+}
+
+h4 {
+    letter-spacing: 1px;
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--h2-color);
+}
+
+#wrapper {
+    width: calc(100% - 6px);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3px;
+    gap: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1200px;
+}
+
+.divisor {
+    height: 8px;
+    width: 100%;
+    border-top: 2px solid var(--divisor);
+    display: block;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    gap: 8px;
+}
+
+.side {
+    align-self: baseline;
+    color: var(--text-color);
+    border: 1px solid var(--divisor);
+    padding: 5px 5px 50px 5px;
+    font-size: .75rem;
+    font-weight: 600;
+}
+
+.content {
+    background: var(--content-bg);
+    width: 100%;
+    color: var(--text-color);
+    font-size: .8rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 2px solid var(--text-color);
+}
+
+.box-content {
+    border: 1px solid var(--divisor);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-content__text {
+    padding: .5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.box-content__text>div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    padding: 8px;
+    border: 3px solid var(--border-color);
+    border-top: 1rem solid var(--border-color);
+    background-color: var(--bg-color);
+}
+
+.col-1 {
+    width: calc(40% - 3px);
+    height: calc(100vh - 6px);
+}
+
+.col-2 {
+    width: calc(60% - 3px);
+    /* border: 1px solid red; */
+    height: calc(100vh - 6px);
+}
+
+#coordinates {
+    height: 55%;
+    min-width: 300px;
+}
+
+.coordinates-rover, .obstacle-detection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 900;
+    font-size: 1rem;
+    padding: 1rem 0;
+}
+
+.coordinates-rover>span {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+    padding: 0 1rem;
+}
+
+.obstacle-detection>span {
+    color: var(--h1-color);
+}
+
+#cameras {
+    height: 45%;
+    width: 100%;
+    min-width: 300px;
+    overflow: auto;
+}
+
+#cameras .box-content {
+    height: 30vh;
+}
+
+.camera-img {
+    display: block;
+    height: 100%;
+    background-image: url('../assets/selfie-rover.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    opacity: .7;
+}
+
+#map {
+    height: 60%;
+    min-width: 602px;
+}
+
+#map .content {
+    align-items: center;
+    justify-content: center;
+}
+
+#grid {
+    background-image: url(../assets/bg.jpg);
+    opacity: .8;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: calc(var(--cell-size) * var(--grid-x) + 4px);
+    height: calc(var(--cell-size) * var(--grid-y) + 4px);
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    border: 2px solid rgba(163, 163, 163, 0.5);
+}
+
+#grid>div {
+    border: 1px solid rgba(163, 163, 163, 0.5);
+    width: var(--cell-size);
+    height: var(--cell-size);
+}
+
+#controls {
+    height: 40%;
+    min-width: 602px;
+}
+
+#controls .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#controls button {
+    width: 20%;
+    border: none;
+    border-top: 3px solid var(--divisor);
+    aspect-ratio: 1;
+    padding: 2rem;
+    background: var(--content-bg);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    color: white;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+#controls button:hover {
+    transition: background 600ms;
+    background: linear-gradient(356deg, rgba(21, 56, 86, 1) 0%, rgb(10, 10, 10) 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes circular-motion {
+    0% {
+        transform: rotate(0deg) translateX(3px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(3px) rotate(-360deg);
+    }
+}
+
+.rover {
+    background-image: url('../assets/rover.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 999;
+    background-color: transparent !important;
+}
+
+.obstacle {
+    background-image: url('../assets/boulder.png') !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: .7;
+}
+
+.obs, .colonObs {
+    display: none;
+}

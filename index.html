@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mars Rover Kata</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<div class="col-1">
+				<!-- COORDINATES -->
+				<div id="coordinates" class="card">
+					<h1>
+						<span class="dot"><i class="fa-solid fa-square fa-xs"></i></span
+						><span>general</span> coordinates
+					</h1>
+					<span class="divisor"></span>
+					<div class="content-wrapper">
+						<div class="side">10</div>
+						<div class="content">
+							<h2>
+								<span class="dot"
+									><i class="fa-solid fa-square fa-2xs"></i
+								></span>
+								coordinates
+							</h2>
+							<div class="box-content">
+								<h3>POSITION</h3>
+								<div class="box-content__text">
+									<div>
+										<h4>X-axis</h4>
+										<span class="x-coordinate">1</span>
+									</div>
+									<div>
+										<h4>Y-axis</h4>
+										<span class="y-coordinate">0</span>
+									</div>
+									<div>
+										<h4>degrees</h4>
+										<span class="deg-coordinate">0</span>
+									</div>
+									<div>
+										<h4>direction</h4>
+										<span class="dir-coordinate">N</span>
+									</div>
+								</div>
+								<span class="divisor"></span>
+								<h3>ROVER COORDINATES</h3>
+								<div class="coordinates-rover">
+									<span class="obs"></span>
+									<span class="colonObs"></span>
+									<span class="x-coordinate">1</span>
+									<span class="colon">:</span>
+									<span class="y-coordinate">0</span>
+									<span class="colon">:</span>
+									<span class="dir-coordinate">N</span>
+								</div>
+								<span class="divisor"></span>
+								<h3>OBSTACLE DETECTED</h3>
+								<div class="obstacle-detection">
+									<span class="obsBool">FALSE</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="cameras" class="card">
+					<h1>
+						<span class="dot"><i class="fa-solid fa-square fa-xs"></i></span
+						><span>top</span> camera#1
+					</h1>
+					<span class="divisor"></span>
+					<div class="content-wrapper">
+						<div class="side">06</div>
+						<div class="content">
+							<div class="box-content">
+								<div class="camera-img"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-2">
+				<!-- MAP -->
+				<div id="map" class="card">
+					<h1>
+						<span class="dot"> <i class="fa-solid fa-square fa-xs"></i> </span
+						><span>mars</span> map
+					</h1>
+					<span class="divisor"></span>
+					<div class="content-wrapper">
+						<div class="side">27</div>
+						<div class="content">
+							<div id="grid"></div>
+						</div>
+					</div>
+				</div>
+				<!-- CONTROLS -->
+				<div id="controls" class="card">
+					<h1>
+						<span class="dot"><i class="fa-solid fa-square fa-xs"></i></span
+						><span>rover</span> controls
+					</h1>
+					<span class="divisor"></span>
+					<div class="content-wrapper">
+						<div class="side">79</div>
+						<div class="content">
+							<button id="l" data-control="l">L</button>
+							<button id="f" data-control="f">F</button>
+							<button id="b" data-control="b">B</button>
+							<button id="r" data-control="r">R</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/script.js"></script>
+	</body>
+</html>
